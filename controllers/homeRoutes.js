@@ -17,4 +17,12 @@ router.get('/login', withoutAuth, (req, res) => {
   }
 });
 
+router.get('/join', withoutAuth, (req, res) => {
+  try {
+    res.render('join');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
