@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Ethics Blog</title>
-  <link rel="stylesheet" href="css/jass.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -15,8 +15,7 @@
       <h1>
         <a href="/">AI Ethics Blog</a>
       </h1>
-    </header>
-    <nav>
+      <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -24,15 +23,17 @@
         {{else}}
         <a href="/login">login</a>
         {{/if}}
-    </nav>
+      </nav>
+    </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
-      
+
     </footer>
   </div>
+
 
 </body>
 
