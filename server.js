@@ -1,15 +1,23 @@
-// Import
+// Dependencies
 const express = require('express');
+const path = require('path');
+const { engine } = require('express-handlebars');
 
-// Initialize
+
+// Initialize and set up express app
 const app = express();
-
-// Specify
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Static middleware pointing to the public folder
-app.use(express.static('public'));
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views','./main/views');
 
+app.use(express.static(path.join(__dirname,'public')));
+
+//set up routes
+
+app.use(require('./main/controllers/homeRoutes'));
 
 // listen() method is responsible for listening for incoming connections on the specified port 
 app.listen(PORT, () =>
