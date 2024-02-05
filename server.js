@@ -9,6 +9,7 @@ const helper = require('./utils/helper');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 // Static middleware pointing to the public folder
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
