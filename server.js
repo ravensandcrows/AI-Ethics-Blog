@@ -47,5 +47,5 @@ app.use(routes);
 
 // listen() method is responsible for listening for incoming connections on the specified port 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
+  app.listen(PORT, () => console.log(`Now listening at http://localhost:${PORT}`));
 });
