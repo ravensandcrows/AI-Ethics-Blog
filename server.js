@@ -11,13 +11,13 @@ const PORT = process.env.PORT || 3001;
 // Static middleware pointing to the public folder
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
-app.set('views','./main/views');
+app.set('views','./views');
 
 app.use(express.static(path.join(__dirname,'public')));
 
 //set up routes
 
-app.use(require('./main/controllers/homeRoutes'));
+app.use(require('./controllers/homeRoutes'));
 
 // listen() method is responsible for listening for incoming connections on the specified port 
 app.listen(PORT, () =>
