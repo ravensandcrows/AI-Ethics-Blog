@@ -1,12 +1,8 @@
 const joinHandler = async function (event) {
     event.preventDefault();
 
-    const usernameEl = document
-        .querySelector('#username-input-signup')
-        .value.trim();
-    const passwordEl = document
-        .querySelector('#password-input-signup')
-        .value.trim();
+    const usernameEl = document.querySelector('#username-input-join').value.trim();
+    const passwordEl = document.querySelector('#password-input-join').value.trim();
 
     if (passwordEl.length >= 8 && usernameEl) {
         const response = await fetch('/api/users', {
@@ -30,4 +26,4 @@ const joinHandler = async function (event) {
     }
 };
 
-document.querySelector('#signup-form').addEventListener('submit', joinHandler);
+document.querySelector('#join-form').addEventListener('submit', joinHandler);
