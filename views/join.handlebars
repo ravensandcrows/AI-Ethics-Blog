@@ -1,21 +1,23 @@
 <div class="row">
-      <div class="col-md-6">
+  <div class="col-md-6">
     <h2>Join</h2>
 
-    <form class="form signup-form" id="signup-form">
-      <div class="form-group">
-        <label for="name-signup">Username:</label>
-        <input class="form-input" type="text" id="username-input-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-input-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Join</button>
-        <a class="btn btn-primary" href="/login">Return to Login?</a>
-      </div>
-    </form>
+    <div id="join" role="tabpanel">
+      <form id="join-form" class="form signup-form">
+        <div class="form-group">
+          <label for="username-input-join">Username:</label>
+          <input class="form-input" type="text" id="username-input-join" />
+        </div>
+        <div class="form-group">
+          <label for="password-input-join">Password:</label>
+          <input class="form-input" type="password" id="password-input-join" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit" id="join-btn">Join</button>
+          <a class="btn btn-primary" href="/login">Return to Login?</a>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 
