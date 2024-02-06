@@ -30,6 +30,4 @@ const joinHandler = async function (event) {
     }
 };
 
-document
-    .querySelector('#signup-form')
-    .addEventListener('submit', joinHandler);
+document.querySelector('#signup-form').addEventListener('submit', joinHandler);
