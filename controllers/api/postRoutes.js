@@ -8,7 +8,8 @@ router.post('/', apiAuth, async (req, res) => {
   try {
     const newPost = await Post.create({ ...body, userId: req.session.user_id });
     res.json(newPost);
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
@@ -23,10 +24,12 @@ router.put('/:id', apiAuth, async (req, res) => {
 
     if (affectedRows > 0) {
       res.status(200).end();
-    } else {
+    } 
+    else {
       res.status(404).end();
     }
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
@@ -41,10 +44,12 @@ router.delete('/:id', apiAuth, async (req, res) => {
 
     if (affectedRows > 0) {
       res.status(200).end();
-    } else {
+    } 
+    else {
       res.status(404).end();
     }
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });

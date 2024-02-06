@@ -17,7 +17,8 @@ router.get('/', withAuth, async (req, res) => {
       posts,
       loggedIn: req.session.logged_in,
     });
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
@@ -41,10 +42,12 @@ router.get('/edit/:id', withAuth, async (req, res) => {
         post,
         loggedIn: req.session.logged_in,
       });
-    } else {
+    } 
+    else {
       res.status(404).end();
     }
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(500).json(err);
   }
 });
