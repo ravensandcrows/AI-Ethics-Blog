@@ -1,44 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset='utf-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>AI Ethics Blog</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
+<div class="flex-column justify-space-around">
+  <header class='display-flex justify-space-between align-center p-2 hero'>
+    {{#if dashboard}}
+    <h1 class='app-title'><a href='/dashboard'>Your Dashboard</a></h1>
+    {{else}}
+    <h1 class='app-title'><a href='/'>AI Ethics Blog</a></h1>
+    {{/if}}
+    <nav class='navbar'>
+      <ul class='flex-row'>
+        <li class='li-inline nav-item'><a href='/'>Home</a></li>
+        <li class='li-inline nav-item'><a href='/dashboard'>Dashboard</a></li>
+        <!-- Conditionally render login or logout links -->
+        {{#if loggedIn}}
+        <li class='li-inline nav-item'><a href='#' id='logout'>Logout</a></li>
+        {{else}}
+        <li class='li-inline nav-item'><a href='/login'>Login</a></li>
+        {{/if}}
+      </ul>
+    </nav>
+  </header>
+  <main class='container container-fluid mt-5'>
+    <!-- Render the sub layout -->
+    {{{body}}}
+  </main>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <a href="/">AI Ethics Blog</a>
-      </h1>
-      <nav>
-        <ul class="flex-row">
-          <li class='li-inline nav-item'><a href='/'>Home</a></li>
-          <li class='li-inline nav-item'><a href='/dashboard'>Dashboard</a></li>
-          <!-- Conditionally render login or logout links -->
-          {{#if logged_in}}
-            <li><a href="/profile">profile</a> |
-          <button class="no-button" id="logout">Logout</button></li>
-          {{else}}
-          <li class='li-inline nav-item'><a href="/login">Login</a></li>
-          {{/if}}
-        </ul>
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
+  {{#if dashboard}}
+  <footer class='footer flex-row justify-center'>
+    <a href='/dashboard/new'>➕ New Thought</a>
+  </footer>
+  {{else}}
+  <footer class='flex-row justify-center'>
+    &copy; The Ethical Thinkers
+  </footer>
+  {{/if}}
 
-    </footer>
-  </div>
-
-
-</body>
-
+  {{#if loggedIn}}
+  <script src='/js/logout.js'></script>
+  {{/if}}
+  </body>
 </html>
