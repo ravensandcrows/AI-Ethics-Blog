@@ -16,6 +16,7 @@ This is a simple blog for people to post about and respond to other's thoughts a
 ## Installation
 
 Click the following link to run the app:
+https://fierce-waters-17081-228a9c282954.herokuapp.com
 
 ## Usage
 
